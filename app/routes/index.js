@@ -35,10 +35,22 @@ router.post('/', async (req, res) => {
         response = await mathematic.spli(number, number1)
     }
 
+    if (req.body.queryResult.action == "squareroot") {
+        const {number}=req.body.queryResult.parameters
+        response = await mathematic.squareroot(number)
+    }
+
+    if (req.body.queryResult.action == "exponent") {
+        const {number, number1}=req.body.queryResult.parameters
+        response = await mathematic.exponent(number, number1)
+    }
+
     if (req.body.queryResult.action == "createreminder") {
         const {date, time}=req.body.queryResult.parameters
         response = await recordatorio.create(date, time)
     }
+
+    
 
 
     res.json({

@@ -9,6 +9,7 @@ const fn = {}
 
 
 async function create(date, time) {
+
     const auth = await AccesCalendar.accesvalidate()
     const fechaSplit = date.split('T')
     const fecha = fechaSplit[0]
@@ -21,7 +22,7 @@ async function create(date, time) {
     const endHour = moment.tz(start, "America/Caracas").add(2, 'hours').format('HH:mm:ss');
     const end = `${fecha}T${endHour}-04:00`
     // console.log(start)
-    // console.log(end)
+    //  console.log(end)
 
     return await CreatEvent(auth, start, end)
 }
