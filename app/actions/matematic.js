@@ -1,27 +1,19 @@
 const fn ={};
 
 async function sum(num1, num2){
-    const sum = num1 + num2;
-    return `${num1} + ${num2} es ${sum}`
-    
+    return num1 + num2;
 }
 
 async function subtraction(num1, num2){
-    const subtraction = num1 - num2;
-    return `${num1} - ${num2} es ${subtraction}`       
-        
+    return num1 - num2;       
 }
 
 async function multiplication(num1, num2){
-    const multiplication = num1 * num2;
-    return `${num1} * ${num2} es ${multiplication}`
-        
+    return num1 * num2;
 }
 
 async function spli(num1, num2){
-    const split = num1 / num2;
-    return `${num1} / ${num2} es ${split}`
-        
+    return num1 / num2;   
 }
 
 fn.sum = sum;
