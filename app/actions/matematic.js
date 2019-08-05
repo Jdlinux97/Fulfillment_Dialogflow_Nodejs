@@ -1,9 +1,7 @@
 const fn ={};
 
 async function sum(num1, num2){
-    const sum = num1 + num2;
-    return `${sum}`
-    
+    return num1 + num2;
 }
 
 async function subtraction(num1, num2){
