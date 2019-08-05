@@ -20,8 +20,8 @@ async function create(date, time) {
     // esto falla desde telegram
     const endHour = moment.tz(start, "America/Caracas").add(2, 'hours').format('HH:mm:ss');
     const end = `${fecha}T${endHour}-04:00`
-    console.log(start)
-    console.log(end)
+    // console.log(start)
+    // console.log(end)
 
     return await CreatEvent(auth, start, end)
 }

@@ -2,24 +2,40 @@ const express = require('express');
 const router = express.Router();
 
 
-const mathematic = require('../actions/matematica');
+const mathematic = require('../actions/matematic');
 const recordatorio = require('../actions/recordatorio');
 
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
     res.json({
-        status:'corriendo'
+        status: 'corriendo'
     })
 })
 
+
 router.post('/', async (req, res) => {
+    
     let response;
-    if (req.body.queryResult.action == "suma") {
-        const num1 = parseFloat(req.body.queryResult.parameters.number);
-        const num2 = parseFloat(req.body.queryResult.parameters.number1);
-        response = await mathematic.suma(num1, num2)
+
+    if (req.body.queryResult.action == "sum") {
+        const {number, number1}=req.body.queryResult.parameters
+        response = await mathematic.sum(number, number1)
+    }
+    if (req.body.queryResult.action == "subtraction") {
+        const {number, number1}=req.body.queryResult.parameters
+        response = await mathematic.subtraction(number, number1)
     }
 
-    if (req.body.queryResult.action == "recordatorio") {
+    if (req.body.queryResult.action == "multiplication") {
+        const {number, number1}=req.body.queryResult.parameters
+        response = await mathematic.multiplication(number, number1)
+    }
+
+    if (req.body.queryResult.action == "split") {
+        const {number, number1}=req.body.queryResult.parameters
+        response = await mathematic.spli(number, number1)
+    }
+
+    if (req.body.queryResult.action == "createreminder") {
         const {date, time}=req.body.queryResult.parameters
         response = await recordatorio.create(date, time)
     }
