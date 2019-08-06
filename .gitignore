@@ -1,4 +1,4 @@
 node_modules
 .env
-./app/config/Google/Calendar/credentials.json
-./app/config/Google/Calendar/token.json
+/app/config/Google/Calendar/credentials.json
+/app/config/Google/Calendar/token.json
